@@ -24,6 +24,9 @@ class HelloController
         return new Response('Olá, ' . $newSlug . '!'); 
     }
 
+    //essa foi uma aula sobre ROTAS CORINGAS
+    //e também RECEBER UM VALOR PELA URL
+
 }
 
 
