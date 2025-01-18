@@ -7,46 +7,18 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HelloController
 {
-    #[Route('/')]
-    public function index(): Response
+    #[Route('/pessoa/{nome}')]
+    public function nome(string $nome=null): Response
     {
-        return new Response('Olá, Mundo!');
+        $newNome = str_replace("-", " ", $nome);
+        return new Response('Olá, ' . $newNome . '!');
     }
 
-    #[Route('/dinossauro')]
-    public function dinossauro(): Response
+    #[Route('/animal/{slug}')]
+    public function animal(string $slug=null): Response
     {
-        return new Response('Olá, dinossauro!');
-    }
-
-    #[Route('/mamiferos')]
-    public function mamiferos(): Response
-    {
-        return new Response('Olá, mamíferos!');
-    }
-
-    #[Route('/invertebrados')]
-    public function invertebrados(): Response
-    {
-        return new Response('Olá, invertebrados!');
-    }
-
-    #[Route('/insetos')]
-    public function insetos(): Response
-    {
-        return new Response('Olá, insetos!');
-    }
-
-    #[Route('/aves')]
-    public function aves(): Response
-    {
-        return new Response('Olá, aves!');
-    }
-
-    #[Route('/felinos')]
-    public function felinos(): Response
-    {
-        return new Response('Olá, felinos!');
+        $newSlug = str_replace("-", " ", $slug);
+        return new Response('Olá, ' . $newSlug . '!'); 
     }
 
 }
