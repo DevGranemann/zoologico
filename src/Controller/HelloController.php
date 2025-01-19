@@ -2,18 +2,17 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use function Symfony\Component\String\u;
 
-class HelloController
+class HelloController extends AbstractController
 {
-    #[Route('/pessoa/{nome}')]
-    public function nome(string $nome=null): Response
+    #[Route('/')]
+    public function index(): Response
     {
-        $newNome = str_replace("-", " ", $nome);
-        $newNome = u($newNome)->title(true);
-        return new Response('Olá, ' . $newNome . '!');
+        return $this->render('hello/homepage.html.twig', []);
     }
 
     #[Route('/animal/{slug}')]
