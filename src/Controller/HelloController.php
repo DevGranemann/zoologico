@@ -26,7 +26,7 @@ class HelloController extends AbstractController
 
         return $this->render('hello/homepage.html.twig', [
             
-            'title' => 'Zoologico',
+            'title' => 'Home Page',
             'users' => $users,
 
         ]);
