@@ -12,7 +12,24 @@ class HelloController extends AbstractController
     #[Route('/')]
     public function index(): Response
     {
-        return $this->render('hello/homepage.html.twig', []);
+        $users =
+        [
+            ['name' => 'fulano de tal', 'phone' => '(49) 9 9188-9910'],
+            ['name' => 'fulano de tal', 'phone' => '(49) 9 9188-9910'],
+            ['name' => 'fulano de tal', 'phone' => '(49) 9 9188-9910'],
+            ['name' => 'fulano de tal', 'phone' => '(49) 9 9188-9910'],
+            ['name' => 'fulano de tal', 'phone' => '(49) 9 9188-9910'],
+            ['name' => 'fulano de tal', 'phone' => '(49) 9 9188-9910'],
+            ['name' => 'fulano de tal', 'phone' => '(49) 9 9188-9910'],
+
+        ];
+
+        return $this->render('hello/homepage.html.twig', [
+            
+            'title' => 'Zoologico',
+            'users' => $users,
+
+        ]);
     }
 
     #[Route('/animal/{slug}')]

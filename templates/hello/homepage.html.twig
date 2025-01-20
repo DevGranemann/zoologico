@@ -1,2 +1,15 @@
-<h1>Home Page</h1>
+<h1>{{ title }}</h1>
 Bem vindo ao nosso Site!
+
+<ul>
+
+    {# Este é o laço de usuários #}
+    
+    {%  for user in users %}
+
+        <li>Nome: {{ user.name }} - phone: {{ user.phone }}</li>
+        
+    {% endfor %} 
+
+
+</ul>
